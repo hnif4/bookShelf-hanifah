@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #a5e4f7;
+  color: #333;
+  padding: 20px;
+  
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #5ea6c7;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000; 
+}
+
+
+header h1 {
+  color: #20646d;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quote-section {
+  background-color: #f4f4f4;
+  border-left: 4px solid #3931a1;
+  padding: 20px;
+  margin-top: 20px;
+  font-style: italic;
+  color: #555;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.quote-section blockquote {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 18px;
+}
+
+/* Hover effect */
+.quote-section:hover {
+  transform: scale(1.05); 
+  background-color: #edf1b1; 
+}
+
+.quote-section:hover blockquote {
+  color: #4f84f8; 
+}
+
+#notification {
+  display: none;
+  padding: 10px;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+
+.book-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  animation: slideUp 0.5s ease-out;
+}
+.book-item button {
+  margin-right: 5px;
+}
+
+section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #20646d;
+  border-bottom: 2px solid #20646d;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="checkbox"] {
+  margin-left: 5px;
+}
+
+/* Aturan dasar untuk semua tombol */
+button {
+  padding: 10px 15px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button {
+  background-color: #20646d;
+}
+
+button:hover {
+  background-color: #1a4f58;
+}
+
+button.danger {
+  background-color: #e74c3c; 
+}
+
+button.danger:hover {
+  background-color: #c0392b; 
+}
+
+button.edit {
+  background-color: #3498db; 
+}
+
+button.edit:hover {
+  background-color: #2980b9; 
+}
+
+
+button:hover {
+  background-color: #1a4f58;
+  transform: scale(1.05); /* Menambah efek zoom */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+#incompleteBookList,
+#completeBookList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+[data-testid="bookItem"] {
+  background-color: #ffe4d4;
+  padding: 15px;
+  border-radius: 8px;
+  width: calc(50% - 10px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+[data-testid="bookItem"] h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+[data-testid="bookItem"] p {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+[data-testid="bookItem"] button {
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsivitas */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #incompleteBookList,
+  #completeBookList {
+    flex-direction: column;
+    gap: 10px; 
+  }
+
+  [data-testid="bookItem"] {
+    width: 100%;  
+  }
+}
+
+@media (max-width: 600px) {
+  input[type="text"],
+  input[type="number"] {
+    font-size: 0.9rem;  
+    padding: 6px;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
